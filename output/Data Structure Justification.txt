@@ -1,0 +1,3 @@
+The list of words from the text file is stored in an ArrayList of Strings, as ArrayList has the .sort() with custom comparators as well as the ability to freely add words. The required operation is just trivial retrieval, so ArrayList is fine.
+
+The list of Words is technically stored in another ArrayList, since we don't actually read from that ArrayList. But, there is a HashMap that the Words are created from, which is HashMap<String, Integer>, which is the appropriate data structure here, so that we can easily look up frequencies from typing in words, and lookup is the main purpose of that HashMap.

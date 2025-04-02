@@ -1,0 +1,23 @@
+Enter a word to search for: 
+The word bob appears 6 times.
+Enter a word to search for: 
+The word rock appears 12 times.
+Enter a word to search for: 
+The word lol appears 1 times.
+Enter a word to search for: 
+The word askdfjajsdfkljadsfls does not appear in the text.
+Enter a word to search for: 
+The word war appears 32 times.
+Enter a word to search for: 
+The word and appears 8502 times.
+Enter a word to search for: 
+The word peace appears 47 times.
+Enter a word to search for: 
+The word tot appears 8 times.
+Enter a word to search for: 
+The word total appears 1 times.
+Enter a word to search for: 
+The word hello appears 9 times.
+Enter a word to search for: 
+The word greetings appears 1 times.
+Enter a word to search for: 
