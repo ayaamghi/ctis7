@@ -1,4 +1,4 @@
-package edu.guilford.ctis7;
+package edu.guilford.ctis7.Backend;
 
 /***
  * Contains word and frequency
@@ -49,5 +49,12 @@ public class Word implements Comparable<Word> {
                 "word='" + word + '\'' +
                 ", frequency=" + frequency +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Word word1)) return false;
+        return word.equals(word1.word);
     }
 }

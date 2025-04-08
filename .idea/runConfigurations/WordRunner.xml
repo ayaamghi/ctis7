@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="WordRunner" type="Application" factoryName="Application" activateToolWindowBeforeRun="false" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="edu.guilford.ctis7.Backend.WordRunner" />
+    <module name="ctis7" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="edu.guilford.ctis7.FileWriter" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

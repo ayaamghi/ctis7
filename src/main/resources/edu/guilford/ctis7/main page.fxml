@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.guilford.ctis7.GUI.TestController">
+   <children>
+      <Button fx:id="fileButton" layoutX="95.0" layoutY="213.0" mnemonicParsing="false" text="Button" />
+      <Label fx:id="phraseOutput" layoutX="389.0" layoutY="230.0" text="Label" />
+      <TextField fx:id="phraseStartWordField" layoutX="220.0" layoutY="188.0" promptText="Phrase start" />
+      <TextField fx:id="numberOfWordsField" layoutX="404.0" layoutY="188.0" promptText="number of words" />
+      <Button layoutX="362.0" layoutY="153.0" mnemonicParsing="false" text="Generate"  fx:id = "generateButton"/>
+
+   </children>
+</AnchorPane>
