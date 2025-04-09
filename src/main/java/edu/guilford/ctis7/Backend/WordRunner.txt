@@ -13,7 +13,7 @@ public class WordRunner {
 
         ArrayList<String> allWordsFromText = TextReader.readFile("src/main/resources/edu/guilford/ctis7/book-war-and-peace.txt");
         TreeMap<String, ArrayList<Word>> twoGram;
-        twoGram = TextReader.createTwoGram(allWordsFromText);
+        twoGram = TextReader.createTwoGrams(allWordsFromText);
 
         //System.out.println(twoGram);
 

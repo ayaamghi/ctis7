@@ -12,7 +12,6 @@ public class LargeTest {
 
     public static void main(String[] args) {
         // Create an instance of ApplicationInstance with a list of file paths
-        ApplicationInstance appInstance = new ApplicationInstance(new ArrayList<>());
 
         // Create a list of file paths (for testing purposes)
         ArrayList<String> filePaths = new ArrayList<>();
@@ -28,8 +27,8 @@ public class LargeTest {
         System.out.println(filePaths);
         System.out.println(files.length + " files were found.");
 
-        ApplicationInstance instance = new ApplicationInstance(filePaths);
-
+        ApplicationInstance instance = ApplicationInstance.getInstance();
+        instance.setFilePaths(filePaths);
         instance.createAllWordsFromTexts();
         ArrayList<String> words = instance.getAllWordsFromTexts();
 
@@ -38,6 +37,9 @@ public class LargeTest {
         instance.createTwoGram(); //can dumbly multithread this probably
         Map<String, Map<String, Integer>> map;
         map = instance.getTwoGram();
+        System.out.println(map.size() + " two-grams found.");
+
+        System.out.println(instance.generatePhrase(10, "the"));
 //        filePaths.add("src/main/resources/test1.txt");
 //        filePaths.add("src/main/resources/test2.txt");
 //

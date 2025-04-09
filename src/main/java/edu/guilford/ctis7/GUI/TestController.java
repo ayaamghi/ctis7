@@ -26,7 +26,6 @@ public class TestController {
 
     @FXML private Label phraseOutput;
 
-    private ApplicationInstance appInstance;
     @FXML
             public void initialize() {
 
@@ -43,7 +42,7 @@ public class TestController {
     private void handleGeneratePhrase(MouseEvent event) {
         String phraseStart = phraseStartWordField.getText();
         int numberOfWords = Integer.parseInt(numberOfWordsField.getText());
-        String generatedPhrase = appInstance.generatePhrase(numberOfWords, phraseStart);
+        String generatedPhrase = ApplicationInstance.getInstance().generatePhrase(numberOfWords, phraseStart);
         phraseOutput.setText(generatedPhrase);
     }
 
@@ -74,11 +73,13 @@ public class TestController {
 
             }
 
-            appInstance = new ApplicationInstance(filePaths);
+            System.out.println(filePaths.size());
+
 
             //TODO fix this behavior-- perhaps on instantiation of appInstance?
-            appInstance.createAllWordsFromTexts();
-            appInstance.createTwoMap();
+            ApplicationInstance.getInstance().setFilePaths(filePaths);
+            ApplicationInstance.getInstance().createAllWordsFromTexts();
+            ApplicationInstance.getInstance().createTwoGram();
         }
     }
 

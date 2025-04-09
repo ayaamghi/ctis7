@@ -77,6 +77,7 @@ public class TextReader {
     // Instead of TreeMap<String, ArrayList<Word>>,
 // use a Map<String, Map<String, Integer>>
 // (where the inner map is <"word", frequency>).
+    //TODO this needs to be reworked to work with String, Word i think
     public static Map<String, Map<String, Integer>> createTwoGrams(List<String> words) {
         Map<String, Map<String, Integer>> twoGram = new HashMap<>();
 
@@ -98,36 +99,36 @@ public class TextReader {
         return twoGram;
     }
 
-    /***
-     * Creates a TreeMap of two-grams from an ArrayList of String words
-     * @param words
-     * @return
-     */
-    public static TreeMap<String, ArrayList<Word>> createTwoGram(ArrayList<String> words) {
-
-
-        TreeMap<String, ArrayList<Word>> twoGram = new TreeMap<>();
-        for( int i = 0; i < words.size() - 1; i++) {
-
-            String firstWord = words.get(i);
-            Word secondWord = new Word(words.get(i + 1), 0);
-
-
-            if(!twoGram.containsKey(firstWord)) {
-                twoGram.put(firstWord, twoGram.getOrDefault(firstWord, new ArrayList<>()));
-            }
-            //TODO contains() is slow, should be replaced with a hashmap
-            if(!twoGram.get(firstWord).contains(secondWord)) {
-                twoGram.get(firstWord).add(secondWord);
-            }
-            //if the word already exists, increment the frequency
-            //TODO this is slow, should be replaced with a hashmap
-            twoGram.get(firstWord).get(twoGram.get(firstWord).indexOf(secondWord)).setFrequency(twoGram.get(firstWord).get(twoGram.get(firstWord).indexOf(secondWord)).getFrequency() + 1);
-
-        }
-        return twoGram;
-
-    }
+//    /***
+//     * Creates a TreeMap of two-grams from an ArrayList of String words
+//     * @param words
+//     * @return
+//     */
+//    public static TreeMap<String, ArrayList<Word>> createTwoGram(ArrayList<String> words) {
+//
+//
+//        TreeMap<String, ArrayList<Word>> twoGram = new TreeMap<>();
+//        for( int i = 0; i < words.size() - 1; i++) {
+//
+//            String firstWord = words.get(i);
+//            Word secondWord = new Word(words.get(i + 1), 0);
+//
+//
+//            if(!twoGram.containsKey(firstWord)) {
+//                twoGram.put(firstWord, twoGram.getOrDefault(firstWord, new ArrayList<>()));
+//            }
+//            //TODO contains() is slow, should be replaced with a hashmap
+//            if(!twoGram.get(firstWord).contains(secondWord)) {
+//                twoGram.get(firstWord).add(secondWord);
+//            }
+//            //if the word already exists, increment the frequency
+//            //TODO this is slow, should be replaced with a hashmap
+//            twoGram.get(firstWord).get(twoGram.get(firstWord).indexOf(secondWord)).setFrequency(twoGram.get(firstWord).get(twoGram.get(firstWord).indexOf(secondWord)).getFrequency() + 1);
+//
+//        }
+//        return twoGram;
+//
+//    }
 
 
 

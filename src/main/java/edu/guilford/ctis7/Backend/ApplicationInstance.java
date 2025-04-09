@@ -5,17 +5,30 @@ import java.util.stream.Collectors;
 
 public class ApplicationInstance {
 
+    private static ApplicationInstance instance;
+
+    private ApplicationInstance () {
+        // private constructor to prevent instantiation
+    }
+    public static ApplicationInstance getInstance() {
+        if (instance == null) {
+            instance = new ApplicationInstance();
+        }
+        return instance;
+    }
+
+    public void setFilePaths(ArrayList<String> filePaths) {
+        this.sourceFilePaths = filePaths;
+    }
+
     private ArrayList<String> allWordsFromTexts;
+
 
     private ArrayList<String> sourceFilePaths;
 
-    TreeMap<String, ArrayList<Word>> wordsMap;
     HashMap<String, Integer> wordFrequencies;
-    Map<String, Map<String, Integer>> twoGramMap;
-    public ApplicationInstance(ArrayList<String> filePaths) {
 
-        this.sourceFilePaths = filePaths;
-    }
+    Map<String, Map<String, Integer>> twoGramMap;
 
 
 //ran profiler, saw this had performance issues, got parallelStream code from gpt
@@ -30,9 +43,9 @@ public class ApplicationInstance {
         return allWordsFromTexts;
     }
 
-    public void createTwoMap() {
-        wordsMap = TextReader.createTwoGram(allWordsFromTexts);
-        }
+//    public void createTwoMap() {
+//        wordsMap = TextReader.createTwoGram(allWordsFromTexts);
+//        }
 
         public void createTwoGram() {
         twoGramMap = TextReader.createTwoGrams(allWordsFromTexts); //TODO this line could be opimized further according to profiler
@@ -43,9 +56,9 @@ public class ApplicationInstance {
         }
 
 
-    public TreeMap<String, ArrayList<Word>> getWordsMap() {
-        return wordsMap;
-    }
+//    public TreeMap<String, ArrayList<Word>> getWordsMap() {
+//        return wordsMap;
+//    }
 
     public void createFrequencies() {
        wordFrequencies = TextReader.countWords(allWordsFromTexts);
@@ -56,7 +69,7 @@ public class ApplicationInstance {
     }
 
     public String generatePhrase(int phraseLength, String phraseStart) {
-        return WordGenerator.generatePhrase(wordsMap, phraseLength, phraseStart);
+        return WordGenerator.generatePhrase(twoGramMap, phraseLength, phraseStart);
     }
 
 

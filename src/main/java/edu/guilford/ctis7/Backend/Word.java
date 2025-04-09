@@ -1,9 +1,11 @@
 package edu.guilford.ctis7.Backend;
 
+import java.util.Map;
+
 /***
  * Contains word and frequency
  */
-public class Word implements Comparable<Word> {
+public class Word  implements Comparable<Word> {
 
     private String word;
     private int frequency;
